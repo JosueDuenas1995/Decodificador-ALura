@@ -9,7 +9,7 @@
 <body>
     <!--Barra de navegacion con mis datos-->
     <header class="Header">
-    <ul class="header-log">
+    <!--<ul class="header-log">
             <li class="header-alpaca">
             <img src="./imagenes/AlpacaLogo.jpg" alt="Imagen de una alpaca feliz">
         </li>
@@ -31,34 +31,45 @@
 <h1 class="header-title">Josue Daniel Dueñas Bolaños, Grupo 7 Alura LATAM</h1>
 <button type="button">
     <img src="./imagenes/full-screen-svgrepo-com.svg" alt="boton para pasar ampliar la pantalla">
-</button>
+</button>-->
     </header>
 <!--Contenido del Decodificador-->
 <div class="container">
     <div class="encriptar">
-        <textarea name="texto" 
-        class="texto" 
-        id="texto" 
-        cols="30" rows="10" 
-        placeholder="Porfavor ingresa el texto aqui"></textarea>
-    
+        <textarea
+        name="texto"
+        class="texto"
+        id="texto"
+        cols="30"
+        rows="10"
+        placeholder="Ingresa el texto aquí"
+        ></textarea>
+
     <div class="terminos">
-        <p>solo letras minusculas y sin acentos</p>
+        <p>Solo letras minúsculas y sin acentos.</p>
     </div>
     <div class="botones">
-        <button class="btn-encriptar" type="button" onclick="encriptar()">Encriptar</button>
-        <input type="button" class="btn-desencriptar" value="Desencriptar" onclick="desencritar()">
-    </div>
-    <div class="encriptado">
-        <img src="" alt="Alpaca family" id="Alpaca">
-        <div class="mensaje-encriptado" id="mensaje-encriptado">
-            <h1>No mensaje Encriptado</h1>
-            <p id="parrafo">Ingresa el texto que deseas encriptar o desencriptar</p>
-            <textarea name="mensaje" id="mensaje" class="mensaje" cols="30" rows="10"></textarea>
+        <button class="btn-encriptar" type="button" onclick="encriptar()">
+        Encriptar
+        </button>
+        <input
+            type="button"
+            class="btn-desencriptar"
+            value="Desencriptar"
+            onclick="desencriptar()"
+        />
         </div>
     </div>
-</div>
-</div>
+    <div class="encriptado">
+        <img src="img/muñeco.png" alt="" id="muñeco" />
+        <div class="mensaje-encriptado" id="mensaje-encriptado">
+        <h2 id="titulo-mensaje">Ningún mensaje fue encontrado</h2>
+        <p id="parrafo">
+            Ingresa el texto que deseas encriptar o desencriptar
+        </p>
+        </div>
+    </div>
+    </div>
 
 <footer>
     <p>Josue Daniel Dueñas Bolaños - 2024 - Alura LATAM</p>
