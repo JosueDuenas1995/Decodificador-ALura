@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Decodificador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--Barra de navegacion con mis datos-->
+    <header class="Header">
+    <ul class="header-log">
+            <li class="header-alpaca">
+            <img src="./imagenes/AlpacaLogo.jpg" alt="Imagen de una alpaca feliz">
+        </li>
+        <ul class="header-menu">
+            <li class="header-item">
+                <a href="https://danielbolanos.com">mi website</a>
+            </li>
+            <li class="header-item">
+                <a href="https://danielbolanos.com">mi website</a>
+            </li>
+            <li class="header-item">
+                <a href="https://danielbolanos.com">mi website</a>
+            </li>
+            <li class="header-item">
+                <a href="https://danielbolanos.com">mi website</a>
+            </li>
+        </ul>
+    </ul>
+<h1 class="header-title">Josue Daniel Dueñas Bolaños, Grupo 7 Alura LATAM</h1>
+<button type="button">
+    <img src="./imagenes/full-screen-svgrepo-com.svg" alt="boton para pasar ampliar la pantalla">
+</button>
+    </header>
+<!--Contenido del Decodificador-->
+<div class="container">
+    <div class="encriptar">
+        <textarea name="texto" 
+        class="texto" 
+        id="texto" 
+        cols="30" rows="10" 
+        placeholder="Porfavor ingresa el texto aqui"></textarea>
+    
+    <div class="terminos">
+        <p>solo letras minusculas y sin acentos</p>
+    </div>
+    <div class="botones">
+        <button class="btn-encriptar" type="button" onclick="encriptar()">Encriptar</button>
+        <input type="button" class="btn-desencriptar" value="Desencriptar" onclick="desencritar()">
+    </div>
+    <div class="encriptado">
+        <img src="" alt="Alpaca family" id="Alpaca">
+        <div class="mensaje-encriptado" id="mensaje-encriptado">
+            <h1>No mensaje Encriptado</h1>
+            <p id="parrafo">Ingresa el texto que deseas encriptar o desencriptar</p>
+            <textarea name="mensaje" id="mensaje" class="mensaje" cols="30" rows="10"></textarea>
+        </div>
+    </div>
+</div>
+</div>
+
+<footer>
+    <p>Josue Daniel Dueñas Bolaños - 2024 - Alura LATAM</p>
+</footer>
+<script src="index.js"></script>
+</body>
+</html>
