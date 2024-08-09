@@ -1,237 +1,295 @@
-/*body*/
-
-*{
-    margin: 0;
-    padding: 0;
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #F3F5FC;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/*body*/
+/* Header*/
 
-.container{
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    background: pink;
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1% 3%;
+  height: 10%;
 }
 
-.texto{
-    position: absolute;
-    width: 42%;
-    height: 60%;
-    left: 12%;
-    top: 15%;
-    border: none;
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 150%;
-    background-color: lightgoldenrodyellow;
+main {
+  height: 90%;
 }
 
-.texto::placeholder{
-    color:aquamarine;
+
+header img {
+  width: 2%;
 }
 
-.texto:focus, 
-.texto:active{
-    border:none;
-    outline:none;
+header .interact {
+  width: 3.5%;
+  transition: 0.5s;
 }
 
-.terminos{
-    display:flex;
-    flex-direction:row;
-    align-items:center;
-    padding:0px;
-    gap:8px;
-    position: absolute;
-    width: 80%;
-    left: 12%;
-    top: 80%;
+header .interact:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
-.terminos p{
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 150%;
-    color: brown;
-    opacity: 0.8;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
+header .interact:active {
+  transform: scale(1.2);
 }
 
-/*Botones*/
+header #switch:active {
+  transform: rotate(360deg);
+}
 
-.botones {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 1% 0;
-    position: absolute;
-    width: 80%;
-    left: 12%;
-    top: 82%;
+header #reset:hover {
+  transform: rotate(360deg);
+}
+
+/*end header*/
+
+main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+
+.panel-izq {
+  align-self: flex-start;
+}
+
+.logo {
+  margin: 10px 0px 0px 0px;
+  width: 110px;
+  height: auto;
+}
+
+textarea {
+  font-family: inherit;
+  margin-top: 60px;
+  resize: none;
+  overflow: hidden;
+  border: none;
+  font-size: 28px;
+  background-color: #F3F5FC;
+  color: #0A3871;
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    color: #0A3871;
   }
   
-  .btn-encriptar {
-    align-items: center;
-    justify-content: center;
-    padding: 2%;
-    gap: 8px;
-    width: 25%;
-    background-color: #0a3871;
-    border-radius: 24px;
-    font-family: "Inter";
-    font-size: 18px;
-    line-height: 19px;
-    text-align: center;
-    color: #fff;
+}
+
+.nota {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+  color: #495057;
+  font-size: 15px;
+}
+
+.warning {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+  color: #DC0030;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.warning img {
+  width: 20px;
+}
+
+.line-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn-encriptar {
+  width: 240px;
+  height: 48px;
+  border-radius: 15px;
+  background-color: #0A3871;
+  border: solid 2px #0A3871;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  &:active {
+    background-color: #052051;
+    border: solid 2px #052051;
   }
-  
-  .btn-desencriptar {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 2%;
-    gap: 8px;
-    width: 25%;
-    background: #d8dfe8;
-    border: 1px solid #0a3871;
-    border-radius: 24px;
-    font-family: "Inter";
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 19px;
-    text-align: center;
-    color: #0a3871;
+}
+
+.btn-desencriptar {
+  width: 240px;
+  height: 48px;
+  border-radius: 15px;
+  background-color: #CED4DA;
+  border: solid 2px #0A3871;
+  color: #0A3871;
+  font-size: 16px;
+  cursor: pointer;
+  &:active {
+    background-color: #343A40;
+    border: solid 2px #343A40;
+    color: white;
   }
-  
-  .btn-desencriptar:hover,
-  .btn-encriptar:hover {
-    margin: 0.3%;
-    width: 24.5%;
-    padding: 1.8%;
+}
+
+.btn-error {
+  width: 240px;
+  height: 48px;
+  border-radius: 15px;
+  background-color: #E9ECF8;
+  border: solid 2px #E9ECF8;
+  color: #868E96;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.card {
+  background-color: white;
+  border-radius: 32px;
+  width: 300px;
+  height: 450px;
+  margin: 30px 40px 30px 0px;
+  padding: 0px 40px 0px 40px;
+  box-shadow: 0px 0px 8px 0px #CED4DA;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.munieco {
+  width: 200px;
+  height: auto;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #343A40;
+  margin: 25px;
+}
+
+h3 {
+  font-size: 13px;
+  color: #495057;
+  margin-bottom: 25px;
+}
+
+.btn-copiar {
+  width: 240px;
+  height: 48px;
+  border-radius: 15px;
+  background-color: white;
+  border: solid 2px #0A3871;
+  color: #0A3871;
+  font-size: 16px;
+  cursor: pointer;
+  &:active {
+    background-color: #868E96;
+    border: solid 2px #868E96;
+    color: white;
   }
-  
-  .encriptado {
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    width: 30%;
-    height: 90%;
-    left: 60%;
-    top: 5%;
-    background: #fff;
-    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
-    border-radius: 32px;
-  }
-  
-  .mensaje-encriptado {
-    display: flex;
+}
+
+
+
+footer {
+  background-color: #495057;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  bottom: 0;
+}
+
+h6 {
+  font-size: 0.8rem;
+}
+
+/* Medias queries */
+
+@media screen and (max-width: 1100px) {
+  main {
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 1%;
-    gap: 16px;
-    position: absolute;
-    width: 100%;
-    top: 65%;
-    text-align: center;
   }
-  
-  .mensaje-encriptado h2 {
-    width: 60%;
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 120%;
-    text-align: center;
-    color: #343a40;
-  }
-  
-  .mensaje-encriptado p {
-    width: 80%;
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
-    text-align: center;
-    color: #495057;
-  }
-  
-  .encriptado img {
-    position: absolute;
-    width: 80%;
-    height: 50%;
-    top: 15%;
-  }
-  
-  /* Responsive design */
-  @media (max-width: 57.5em) {
-    .container {
-      display: flex;
-      flex-direction: row;
-    }
-    .encriptar {
-      width: 100%;
-    }
-    .texto {
-      width: 80%;
-      height: 60%;
-      left: 10%;
-      top: 5%;
-    }
-    .terminos {
-      width: 80%;
-      left: 10%;
-      top: 67%;
-    }
-    .terminos p {
-      font-size: 16px;
-    }
-    .botones {
-      width: 80%;
-      left: 10%;
-      top: 70%;
-    }
-    .btn-encriptar,
-    .btn-desencriptar {
-      width: 48%;
-      border-radius: 16px;
-    }
-    .btn-encriptar:hover,
-    .btn-desencriptar:hover {
-      margin: 0.3%;
-      width: 47.5%;
-      padding: 1.8%;
-    }
-    .encriptado {
-      width: 80%;
-      height: 15%;
-      left: 10%;
-      top: 80%;
-    }
-    .mensaje-encriptado {
-      width: 100%;
-      top: 5%;
-    }
-    .encriptado img {
-      top: 0;
-      display: none;
-      visibility: hidden;
-    }
 
-    .footer{
-            width: 80%;
-            left: 10%;
-            top: 67%;
-    }
+  .card {
+    width: 500px;
+    height: 400px;
+    margin: 50px auto;
   }
+
+  .munieco {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .panel-izq {
+    align-self: inherit;
+  }
+
+  .panel-central {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  textarea {
+    width: 350px;
+  }
+
+  .nota, .warning {
+    justify-content: center;
+  }
+
+  .warning {
+    font-size: 15px;
+  }
+  
+  .warning img {
+    width: 15px;
+  }
+
+  .line-btn {
+    margin-top: 30px;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .btn-encriptar, .btn-desencriptar, .btn-error {
+    width: 350px;
+    height: 60px;
+    font-size: 1.6rem;
+  }
+
+  .card {
+    width: 300px;
+    height: 400px;
+    margin: 50px auto;
+    padding: 0px 15px 0px 15px;
+  }
+
+  .munieco {
+    display: none;
+  }
+}
