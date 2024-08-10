@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="./reset.css">
   <link rel="stylesheet" href="./style.css">
   
-
   <!-- Google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,8 +29,8 @@
       <form action="">
         <textarea name="" id="cajaDeTexto" cols="30" rows="9" placeholder="Ingrese el texto aquí" onkeyup="validarCaracteres()"></textarea>
         <div id="warning" class="nota">
-          <img src="./img/bi_exclamation-circle-fill.svg" alt="Signo de Exclamacion">
-          <h4>Solo letras minúsculas y sin acentos</h4>
+          <img src="./img/bi_exclamation-circle-fill.svg" alt="Alerta imagen">
+          <h4>Solo letras minúsculas y sin caracteres Especiales</h4>
         </div>
         <div class="line-btn">
           <input id="btn-encriptar" class="btn-encriptar" type="button" value="Encriptar" onclick="encriptarTexto()">
@@ -43,7 +42,7 @@
     <section class="panel-derecho">
       <div class="card">
         <!-- <p id="encrip-text"></p> -->
-        <img id="munieco" class="munieco" src="./img/Muñeco.png" alt="Muñeco Alura LATAM">
+        <img id="munieco" class="munieco" src="./img/Muñeco.png" alt="Muñeco alura, esta encriptando datos">
         <h2 id="encrip-text">Ningún mensaje fue <br> encontrado</h2>
         <h3>Ingresa el texto que desees encriptar o <br> desencriptar.</h3>
         <button class="btn-copiar" onclick="copiarTexto()">Copiar</button>
@@ -52,9 +51,10 @@
   </main>
 
   <footer>
-    <h6>Hecho por Josue Daniel Dueñas Bolaños 2024</h6>
+    <h6>Hecho por Josue Daniel Dueñas Bolaños - 2024</h6>
   </footer>
+
+<script src="index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
-<script src="./index.js" defer></script>
 </html>
-                

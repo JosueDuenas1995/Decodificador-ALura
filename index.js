@@ -1,67 +1,95 @@
 function validarCaracteres() {
-  let inputText = document.getElementById("cajaDeTexto").value;
-  const regExpMin = /^[a-z\s]+$/;
-  document.getElementById("cajaDeTexto").placeholder = "";
-  
-  if (!regExpMin.test(inputText)) {
-    document.getElementById("btn-encriptar").disabled = true;
-    document.getElementById("btn-encriptar").className = "btn-error";
-    document.getElementById("btn-desencriptar").disabled = true;
-    document.getElementById("btn-desencriptar").className = "btn-error";
-    document.getElementById("warning").className = "warning";
+  const textarea = document.getElementById('cajaDeTexto');
+  const warning = document.getElementById('warning');
+  const texto = textarea.value;
+
+  // Regex para permitir solo letras minúsculas y sin acentos
+  const regex = /^[a-z\s]*$/;
+
+  if (!regex.test(texto)) {
+      warning.style.display = 'flex';
+      // Mostrar alerta
+      Swal.fire({
+        title: 'Error!',
+        text: 'No letras mayuscculas o caracteres especiales',
+        icon: 'error',
+        confirmButtonText: 'Ok'
+      })
+      // Remover los caracteres inválidos sin hacer reemplazo automático
+      textarea.value = texto.replace(/[^a-z\s]/g, '');
   } else {
-    document.getElementById("btn-encriptar").disabled = false;
-    document.getElementById("btn-encriptar").className = "btn-encriptar";
-    document.getElementById("btn-desencriptar").disabled = false;
-    document.getElementById("btn-desencriptar").className = "btn-desencriptar";
-    document.getElementById("warning").className = "nota";
+      warning.style.display = 'none';
   }
 }
 
-// Variable a la que se asignara el valor de la caja de texto ecriptado/desencriptado.
-let textoEncriptado = "";
-
+// Función para encriptar texto
 function encriptarTexto() {
-  let texto = document.getElementById("cajaDeTexto").value;
-  console.log(texto);
-  document.getElementById("munieco").style.display = "none";
-  document.getElementById("cajaDeTexto").value = "";
-  document.getElementById("cajaDeTexto").placeholder = "Encripta otro texto!";
+  const textarea = document.getElementById('cajaDeTexto');
+  let texto = textarea.value;
 
-  textoEncriptado = texto
-    .replaceAll("e", "enter")
-    .replaceAll("i", "imes")
-    .replaceAll("a", "ai")
-    .replaceAll("o", "ober")
-    .replaceAll("u", "ufat");
-
-  document.getElementById("encrip-text").innerHTML = textoEncriptado;
-  return textoEncriptado;
+  // Encriptación básica: reemplazar letras según un patrón
+  let textoEncriptado = texto.replace(/e/g, 'enter')
+                             .replace(/i/g, 'imes')
+                             .replace(/a/g, 'ai')
+                             .replace(/o/g, 'ober')
+                             .replace(/u/g, 'ufat');
+                             
+  document.getElementById('encrip-text').innerText = textoEncriptado;
+  document.getElementById('munieco').style.display = 'none'; // Ocultar imagen
+  document.getElementById('encrip-text').style.display = 'block'; // Mostrar texto
 }
 
+// Función para desencriptar texto
 function desencriptarTexto() {
-  let texto = document.getElementById("cajaDeTexto").value;
-  console.log(texto);
-  document.getElementById("munieco").style.display = "none";
-  document.getElementById("cajaDeTexto").value = "Encripta otro texto!";
+  const textarea = document.getElementById('cajaDeTexto');
+  let texto = textarea.value;
 
-  let textoDesencriptado = texto
-    .replaceAll("enter", "e")
-    .replaceAll("imes", "i")
-    .replaceAll("ai", "a")
-    .replaceAll("ober", "o")
-    .replaceAll("ufat", "u");
-
-  document.getElementById("encrip-text").innerHTML = textoDesencriptado;
+  // Desencriptación básica: revertir el patrón de reemplazo
+  let textoDesencriptado = texto.replace(/enter/g, 'e')
+                                .replace(/imes/g, 'i')
+                                .replace(/ai/g, 'a')
+                                .replace(/ober/g, 'o')
+                                .replace(/ufat/g, 'u');
+  
+  document.getElementById('encrip-text').innerText = textoDesencriptado;
+  document.getElementById('munieco').style.display = 'none'; // Ocultar imagen
+  document.getElementById('encrip-text').style.display = 'block'; // Mostrar texto
 }
 
+// Función para copiar el texto al portapapeles
 function copiarTexto() {
-  navigator.clipboard
-    .writeText(textoEncriptado)
-    .then(() => {
-      console.log("Texto copiado al portapapeles");
-    })
-    .catch((err) => {
-      console.error("Error al copiar al portapapeles:", err);
+  const textoEncriptado = document.getElementById('encrip-text').innerText;
+  navigator.clipboard.writeText(textoEncriptado).then(() => {
+    Swal.fire({
+      title: "Copiado!",
+      text: "Texto Copiado en el Portapapeles!",
+      icon: "success"
     });
+  });
+}
+
+// Función para intercambiar el contenido de las cajas de texto
+function switchFields() {
+  const textarea = document.getElementById('cajaDeTexto');
+  const encriptado = document.getElementById('encrip-text');
+  
+  let temp = textarea.value;
+  textarea.value = encriptado.innerText;
+  encriptado.innerText = temp;
+
+  if (encriptado.innerText === "") {
+      document.getElementById('munieco').style.display = 'block';
+      encriptado.style.display = 'none';
+  } else {
+      document.getElementById('munieco').style.display = 'none';
+      encriptado.style.display = 'block';
+  }
+}
+
+// Función para resetear los campos
+function resetFields() {
+  document.getElementById('cajaDeTexto').value = '';
+  document.getElementById('encrip-text').innerText = 'Ningún mensaje fue \n encontrado';
+  document.getElementById('munieco').style.display = 'block';
+  document.getElementById('encrip-text').style.display = 'block';
 }

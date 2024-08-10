@@ -97,7 +97,6 @@ textarea {
   align-items: center;
   gap: 0.4rem;
   margin-bottom: 1.2rem;
-  color: #DC0030;
   font-size: 20px;
   font-weight: bold;
 }
@@ -207,7 +206,7 @@ h3 {
 
 
 footer {
-  background-color: #495057;
+  background-color: #0A3871;
   color: white;
   text-align: center;
   padding: 10px;
